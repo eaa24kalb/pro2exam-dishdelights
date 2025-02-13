@@ -84,7 +84,11 @@ export default function Recipes() {
                                 
                                 <CardMedia
                                 component="img"
-                                height="140"
+                                sx={
+                                    {width: "100%",
+                                     height: 250,
+                                     objectFit: "cover",
+                                }}
                                 image={recipe.imageUrl}
                                 alt={recipe.title}
                                 />

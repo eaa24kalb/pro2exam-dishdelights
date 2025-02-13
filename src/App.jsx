@@ -14,7 +14,7 @@ import RecipeDetail from './views/RecipeDetail';
 
 function App() {
   return (
-    <Router>
+    <Router basename='/pro2exam-dishdelights'>
       <Header/>
       <Routes>
         <Route path="/" element={<Home />} />

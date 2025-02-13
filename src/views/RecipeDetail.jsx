@@ -2,6 +2,16 @@ import { useParams } from "react-router-dom";
 import "../App.css";
 import { useEffect, useState } from "react";
 
+//Images
+import bvcake from "../assets/images/bvcake.jpg";
+import bvcupcake from "../assets/images/bvcupcake.jpg";
+import blemonade from "../assets/images/blemonade.webp";
+import cbeetsoup from "../assets/images/cbeetsoup.jpg.webp";
+import dfcboard from "../assets/images/dfcboard.jpg";
+import mfcocktail from "../assets/images/mfcocktail.jpg";
+import psoup from "../assets/images/psoup.jpg";
+
+
 export default function RecipeDetail() {
     const {id} = useParams(); //Get recipe id from Url
     const [recipe, setRecipe] = useState(null);
@@ -34,11 +44,11 @@ export default function RecipeDetail() {
                 2. In a large bowl, whisk together the flour, sugar, baking powder, baking soda, salt, and cocoa powder.
                 3. In another bowl, mix buttermilk, oil, eggs, and vanilla. Slowly add the wet mixture to the dry ingredients.
                 4. Stir in the hot coffee and mix until smooth.
-                5. Pour the batter evenly into the cake pans and bake for 30–35 minutes, or until a toothpick inserted in the center comes out clean.
+                5. Pour the batter evenly into the cake pans and bake for 30-35 minutes, or until a toothpick inserted in the center comes out clean.
                 6. Let the cakes cool completely before frosting.
                 7. To make the frosting, beat the cream cheese and butter until smooth. Gradually add the powdered sugar and vanilla. Add black food coloring for an extra gothic touch.
                 8. Frost the cake and decorate with black sprinkles or edible gold flakes.`,
-                imageUrl: "../assets/images/bvcake.jpg"
+                imageUrl: bvcake
             },
 
             "2": {
@@ -69,7 +79,7 @@ export default function RecipeDetail() {
                 4. Pour into cupcake liners and bake for 18-20 minutes. Cool completely.
                 5. Fill cupcakes with raspberry preserves using a piping bag.
                 6. Beat frosting ingredients until smooth, adding black food coloring. Frost and serve.`,
-                imageUrl: "../assets/images/bvcupcake.jpg"
+                imageUrl: bvcupcake
             },
 
             "3": {
@@ -85,7 +95,7 @@ export default function RecipeDetail() {
                 `1. In a pitcher, mix water, lemon juice, and maple syrup.
                 2. Stir in activated charcoal until well blended.
                 3. Serve over ice with lemon slices.`,
-                imageUrl: "../assets/images/blemonade.webp"
+                imageUrl: blemonade.webp
             },
 
             "4": {
@@ -106,7 +116,7 @@ export default function RecipeDetail() {
                 2. Add the grated beets, vegetable broth, red wine vinegar, sugar, salt, and pepper. Simmer for 30 minutes, stirring occasionally.
                 3. Blend the soup until smooth using an immersion blender or a regular blender.
                 4. Serve warm with a swirl of sour cream for a ghostly, gothic presentation.`,
-                imageUrl: "../assets/images/cbeetsoup.jpg.webp"
+                imageUrl: cbeetsoup
             },  
 
             "5": {
@@ -126,7 +136,7 @@ export default function RecipeDetail() {
                 2. Add the fruits, nuts, and olives in clusters for a natural, eerie feel.
                 3. Place a small dish of jam in the center.
                 4. Serve with charcoal crackers or dark bread for a mysterious and elegant appetizer.`,
-                imageUrl: "../assets/images/dfcboard.jpg"
+                imageUrl: dfcboard
             },  
 
             "6": {
@@ -145,7 +155,7 @@ export default function RecipeDetail() {
                 2. Strain into a glass over fresh ice.
                 3. Garnish with blackberries and a rosemary sprig.
                 4. For a dramatic smoky effect, add a small piece of dry ice (allow it to dissolve before sipping).`,
-                imageUrl: "../assets/images/mfcocktail.jpg"
+                imageUrl: mfcocktail
             },  
 
             "7": {
@@ -166,7 +176,7 @@ export default function RecipeDetail() {
                 3. Add the roasted pumpkin, garlic, and vegetable broth. Simmer for 10 minutes.
                 4. Blend until smooth and stir in coconut milk.
                 5. Drizzle with black truffle oil and serve with charcoal bread or blackened croutons.`,
-                imageUrl: "../assets/images/psoup.jpg"
+                imageUrl: psoup
             }
         };
 

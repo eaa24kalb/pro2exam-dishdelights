@@ -63,7 +63,7 @@ export default function PersonalFavorites() {
   return (
     <div className="personal-favorites">
       <h1>My Favorite Recipes</h1>
-      <h4><i>Save and manage your personal favorite recipes here!</i></h4>
+      <h3><i>Save and manage your personal favorite recipes here!</i></h3>
 
       {/* Form for adding or editing a recipe */}
       <div>
