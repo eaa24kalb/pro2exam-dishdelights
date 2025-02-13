@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import "../App.css";
 import { useState } from "react";
+import { Card, CardActionArea, CardMedia, CardContent, Typography, Button, CardActions, Grid } from "@mui/material";
 
     //Images
     import bvcake from "../assets/images/bvcake.jpg";
@@ -27,7 +28,7 @@ export default function Recipes() {
 
     const {categoryId} = useParams(); //Get categoryId from URl
     const [searchTerm, setSearchTerm] = useState("");
-    const [selectedCategory, setSelectedCategory] = useState("");
+    const [selectedCategory, setSelectedCategory] = useState("all");
 
     //Filter recipes based on search and category
     const filteredRecipes = recipes.filter(recipe => {
@@ -40,6 +41,12 @@ export default function Recipes() {
     return (
         <div className="recipes-container">
             <div>
+                <h1>Recipes</h1> 
+                <p>Browse our crafted selection of recipies for every occasion.</p>
+            </div>
+
+        {/* Search input */}
+            <div>
                 Search by recipe:
                 <input 
                     type="text" 
@@ -50,8 +57,9 @@ export default function Recipes() {
                 />
             </div>
 
+        {/* Category filter */}
             <div>
-                Filter by category:
+                <label>Filter by category:</label>
                 <select 
                     id="category"
                     value={selectedCategory}
@@ -64,33 +72,40 @@ export default function Recipes() {
                 </select>
             </div>
         
+        {/* Recipe grid */}
             <h2>List of Recipes</h2>
             <div className="recipe-list">
-                {filteredRecipes.map((recipe) => (
-                    <div className="recipe-card" key={recipe.id}>
+                <Grid container spacing={3}>
+                    {filteredRecipes.map((recipe) => (
+                        <Grid item xs={12} sm={6 } md={4} key={recipe.id}>
+                            <div className="recipe-card">
+                            <Card sx={{ maxWidth: 345 }}>
+                            <CardActionArea component={Link} to={`/recipes/${recipe.id}`}>
+                                
+                                <CardMedia
+                                component="img"
+                                height="140"
+                                image={recipe.imageUrl}
+                                alt={recipe.title}
+                                />
 
-                    <img 
-                        src={recipe.imageUrl} 
-                        alt={recipe.title}
-                        className="recipe-image" 
-                        style={{width: "300px", height: "auto", borderRadius: "6px" }} 
-                    />
-
-                        <h3>{recipe.title}</h3>
-                        <p>{recipe.description}</p>
-                        <Link to={`/recipes/${recipe.id}`} className="recipe-link">View Recipe</Link>
+                            <CardContent>
+                            <Typography gutterBottom variant="h5" component="div">
+                            {recipe.title}
+                            </Typography>
+                          <Typography variant="body2" sx={{ color: "text.secondary" }}>
+                            {recipe.description}
+                          </Typography>
+                        </CardContent>
+                      </CardActionArea>
+                    </Card>
                     </div>
+                  </Grid>
                 ))}
-            </div>
+              </Grid>  
+              </div>    
         </div>
     )
 }
 
 
-
-
-
-<>
-        <h1>Recipes</h1>
-        <p>Browse our crafted selection of recipies for every occasion.</p>
-    </>
