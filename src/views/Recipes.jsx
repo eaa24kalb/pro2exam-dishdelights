@@ -17,13 +17,13 @@ export default function Recipes() {
 
     //Recipe data
     const recipes = [
-        {id: "1", title: "Black Velvet Cake", category: "Baking", imageUrl: bvcake,description: "A dark and decadent twist on the classic red velvet cake, this Black Velvet Cake is rich, moist, and mysterious." },
-        {id: "2", title: "Bloody Velvet Cupcakes", category: "Baking", imageUrl: bvcupcake, description: "Dark cocoa cupcakes with a blood-red raspberry filling and black frosting" },
-        {id: "3", title: "Black Lemonade", category: "Beverage", imageUrl: blemonade, description: "A dark, refreshing drink infused with activated charcoal for a mysterious twist" },
-        {id: "4", title: "Crimsom Beet Soup", category: "Soup", imageUrl: cbeetsoup, description: "This deep crimson beet soup is both beautiful and haunting, perfect for a gothic dinner. Inspired by traditional borscht, this version is smooth, velvety, and packed with earthy flavors, giving the illusion of a bowl filled with liquid rubies." },
-        {id: "5", title: "Dark Forest Charcuterie Board", category: "Platter", imageUrl: dfcboard, description: "A hauntingly beautiful platter filled with rich cheeses, dark fruits, and smoky meats, this gothic charcuterie board is perfect for eerie gatherings and sophisticated gothic dining." },
-        {id: "6", title: "Midnight Fog Cocktail", category: "Beverage", imageUrl: mfcocktail, description: "A smoky, mystical drink with dark flavors of blackberries, bourbon, and a hint of absinthe." },
-        {id: "7", title: "Pumpkin Soup with Black Truffle Oil", category: "Soup", imageUrl: psoup, description: "A rich and velvety pumpkin soup infused with deep flavors of roasted garlic and black truffle oil" },
+        {id: "1", title: "Black Velvet Cake", category: "Baking", imageUrl: bvcake,description: "A dark and decadent twist on the classic red velvet cake, this Black Velvet Cake is rich, moist, and mysterious.", servings: 8, prepTime: "30 min", cookTime: "40 min" },
+        {id: "2", title: "Bloody Velvet Cupcakes", category: "Baking", imageUrl: bvcupcake, description: "Dark cocoa cupcakes with a blood-red raspberry filling and black frosting", servings: 12, prepTime: "20 min", cookTime: "25 min" },
+        {id: "3", title: "Black Lemonade", category: "Beverage", imageUrl: blemonade, description: "A dark, refreshing drink infused with activated charcoal for a mysterious twist", servings: 4, prepTime: "5 min", cookTime: "0 min" },
+        {id: "4", title: "Crimsom Beet Soup", category: "Soup", imageUrl: cbeetsoup, description: "This deep crimson beet soup is both beautiful and haunting, perfect for a gothic dinner. Inspired by traditional borscht, this version is smooth, velvety, and packed with earthy flavors, giving the illusion of a bowl filled with liquid rubies.", servings: 6, prepTime: "15 min", cookTime: "1 hr" },
+        {id: "5", title: "Dark Forest Charcuterie Board", category: "Platter", imageUrl: dfcboard, description: "A hauntingly beautiful platter filled with rich cheeses, dark fruits, and smoky meats, this gothic charcuterie board is perfect for eerie gatherings and sophisticated gothic dining.", servings: 4, prepTime: "20 min", cookTime: "0 min" },
+        {id: "6", title: "Midnight Fog Cocktail", category: "Beverage", imageUrl: mfcocktail, description: "A smoky, mystical drink with dark flavors of blackberries, bourbon, and a hint of absinthe.", servings: 2, prepTime: "10 min", cookTime: "0 min" },
+        {id: "7", title: "Pumpkin Soup with Black Truffle Oil", category: "Soup", imageUrl: psoup, description: "A rich and velvety pumpkin soup infused with deep flavors of roasted garlic and black truffle oil", servings: 4, prepTime: "10 min", cookTime: "30 min" },
     ];
 
     const {categoryId} = useParams(); //Get categoryId from URl
@@ -97,9 +97,14 @@ export default function Recipes() {
                             <Typography gutterBottom variant="h5" component="div">
                             {recipe.title}
                             </Typography>
-                          <Typography variant="body2" sx={{ color: "text.secondary" }}>
+                            <Typography variant="body2" sx={{ color: "text.secondary" }}>
                             {recipe.description}
-                          </Typography>
+                            </Typography>
+                            <Typography variant="body2" sx={{ color: "text.secondary", marginTop: 2 }}>
+                            <strong>🍴Servings:</strong> {recipe.servings} <br />
+                            <strong>⏱️Prep Time:</strong> {recipe.prepTime} <br />
+                            <strong>⏲️Cook Time:</strong> {recipe.cookTime}
+                        </Typography>
                         </CardContent>
                       </CardActionArea>
                     </Card>
